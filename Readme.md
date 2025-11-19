@@ -1,11 +1,14 @@
 # Getting Started
 
-### Make sure you have Docker and Docker Compose installed on your machine.
-### Also make sure you have nothing running on ports 4321, 8000, and 3306.
+
+Before you begin, ensure you have met the following requirements:
+
+- Make sure you have Docker and Docker Compose installed on your machine.
+- Also make sure you have nothing running on ports 4321, 8000, and 3306.
 
 ### Clone the repository
 ```shell
-git clone <repository_url>
+git clone https://github.com/rifatNR/OllyoSubmission.git
 ```
 
 ### Navigate to the project directory
@@ -47,4 +50,4 @@ php artisan migrate
 ```
 
 ### visit the application
-Open your web browser and navigate to `http://localhost:4321` to access the web application.
+Open your web browser and navigate to http://localhost:4321/ to access the web application.
