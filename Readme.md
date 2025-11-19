@@ -5,6 +5,10 @@
 docker compose run --rm app composer install
 ```
 
+```shell
+cp /backend/.env.example /backend/.env
+```
+
 ### Start Docker containers
 ```shell
 docker compose up
