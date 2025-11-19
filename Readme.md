@@ -1,12 +1,23 @@
 # Getting Started
 
+### Clone the repository
+```shell
+git clone <repository_url>
+```
+
+### Navigate to the project directory
+```shellshell
+cd OllyoSubmission
+```
+
+### Copy environment files
+```shell
+cp ./backend/.env.example ./backend/.env
+```
+
 ### Install PHP dependencies
 ```shell
 docker compose run --rm app composer install
-```
-
-```shell
-cp /backend/.env.example /backend/.env
 ```
 
 ### Start Docker containers
