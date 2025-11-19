@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.9"
 
 services:
   app:
@@ -9,11 +9,21 @@ services:
     working_dir: /var/www/html
     volumes:
       - ./backend:/var/www/html
+      - laravel-vendor:/var/www/html/vendor
     ports:
       - "8000:8000"
     depends_on:
       - mysql
     command: bash -c "php artisan serve --host=0.0.0.0 --port=8000"
+    environment:
+      # Optional: to pass env variables
+      APP_ENV: local
+      APP_DEBUG: true
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_DATABASE: laravel
+      DB_USERNAME: laravel
+      DB_PASSWORD: laravel
 
   frontend:
     build:
@@ -21,11 +31,11 @@ services:
       dockerfile: Dockerfile
     container_name: react-frontend
     working_dir: /app
+    ports:
+      - "4321:4321"
     volumes:
       - ./frontend:/app
       - /app/node_modules
-    ports:
-      - "4321:4321"
     depends_on:
       - app
 
@@ -44,3 +54,4 @@ services:
 
 volumes:
   db-data:
+  laravel-vendor:

@@ -1,15 +1,13 @@
 # Getting Started
 
-### Run Laravel Migrations and Clear Caches
-
+### Install PHP dependencies
 ```shell
-docker compose run --rm app bash -c "cd /var/www/html && php artisan migrate && php artisan cache:clear && php artisan config:clear && php artisan route:clear && php artisan key:generate"
+docker compose run --rm app composer install
 ```
 
-### Run Laravel Migrations and Clear Caches again
-
+### Set up migrations and clear caches
 ```shell
-docker compose run --rm app bash -c "cd /var/www/html && php artisan migrate && php artisan cache:clear && php artisan config:clear && php artisan route:clear && php artisan key:generate"
+docker compose run --rm app bash -c "cd /var/www/html && php artisan cache:clear && php artisan config:clear && php artisan route:clear && php artisan key:generate && php artisan migrate"
 ```
 
 ### Start backend and frontend services
