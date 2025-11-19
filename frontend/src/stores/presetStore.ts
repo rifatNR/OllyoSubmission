@@ -83,7 +83,6 @@ class PresetStore {
             }
             const data = await response.json();
             this.addPreset(data?.data);
-            toast.success("Preset saved successfully");
 
             await this.lstPresets();
         } catch (error) {

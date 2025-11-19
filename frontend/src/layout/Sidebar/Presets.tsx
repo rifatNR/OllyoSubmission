@@ -7,7 +7,9 @@ const Presets = observer(() => {
     const { presetStore } = useStore();
 
     useEffect(() => {
-        presetStore.lstPresets();
+        if (!presetStore.isLoading && !presetStore.presets.length) {
+            presetStore.lstPresets();
+        }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 

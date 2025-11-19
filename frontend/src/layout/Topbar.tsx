@@ -108,7 +108,7 @@ const Topbar = observer(() => {
                                         className="
                                             px-4 py-2 rounded-lg cursor-pointer
                                             bg-ollyo-button-bg-blue border border-ollyo-button-border
-                                            flex items-center gap-2
+                                            flex items-center justify-center gap-2
                                             min-w-32
                                             "
                                         onClick={onSavePreset}
