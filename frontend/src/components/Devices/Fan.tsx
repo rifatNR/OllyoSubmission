@@ -12,8 +12,11 @@ const Fan = observer(() => {
     const rotationRef = useRef(0);
     const currentSpeedRef = useRef(0); // Current smoothed speed
 
-    const targetSpeed = ctrlr.data?.intensity ?? 0;
+    const rawIntensity = ctrlr.data?.intensity ?? 0;
     const isPoweredOn = ctrlr.data?.isPoweredOn ?? false;
+    const targetSpeed = isPoweredOn && rawIntensity === 0 ? 1 : rawIntensity;
+
+    console.log("targetSpeed", targetSpeed);
 
     useEffect(() => {
         const fanElement = fanRef.current;
